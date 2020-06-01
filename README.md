@@ -97,28 +97,28 @@ _**myinfo**_
  ** Step - 5** Now, you need to make some changes in Docker Service so that it can be used remotely using ssh. By default,  this option is not enabled in Docker. So open the file **/usr/lib/systemd/system/docker.service** in any text editor & make the following changes in the line that I have highlighted:
  
  
-     [Unit]
-    Description=Docker Application Container Engine
-    Documentation=https://docs.docker.com
-    BindsTo=containerd.service
-    After=network-online.target firewalld.service
-    Wants=network-online.target
-    Requires=docker.socket
+              [Unit]
+             Description=Docker Application Container Engine
+             Documentation=https://docs.docker.com
+             BindsTo=containerd.service
+             After=network-online.target firewalld.service
+             Wants=network-online.target
+             Requires=docker.socket
 
-    [Service]
-    Type=notify
-    # the default is not to use systemd for cgroups because the delegate issues still
-    # exists and systemd currently does not support the cgroup feature set required
-    # for containers run by docker
-  **ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:4243**
-    ExecReload=/bin/kill -s HUP $MAINPID
-    TimeoutSec=0
-    RestartSec=2
-    Restart=always
+             [Service]
+             Type=notify
+             # the default is not to use systemd for cgroups because the delegate issues still
+             # exists and systemd currently does not support the cgroup feature set required
+             # for containers run by docker
+           **ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:4243**
+             ExecReload=/bin/kill -s HUP $MAINPID
+             TimeoutSec=0
+             RestartSec=2
+             Restart=always
 
-    # Note that StartLimit* options were moved from "Service" to "Unit" in systemd 229.
-    @@@                                                                             
-    "/usr/lib/systemd/system/docker.service" 47L, 1642C           14,57         Top
+             # Note that StartLimit* options were moved from "Service" to "Unit" in systemd 229.
+             @@@                                                                             
+             "/usr/lib/systemd/system/docker.service" 47L, 1642C           14,57         Top
     
 
 
