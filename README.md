@@ -18,13 +18,17 @@ The deployment of pages using Kubernetes will also ensure Rolling Updates & henc
   
 **Step - 2** Now, a Jenkins task needs to be configured to auto download the Dockerfile & the code whenever they are pushed onto Github.
 
+![](/dt4/cd1.png)
 
+![](/dt4/cd2.png)
+
+![](/dt4.cd3.png)
 
 
 
 **Step - 3** Next Jenkins task will build an image from this Dockerfile. This image would have all the code that needs to be deployed. This image will also be automatically pushed to Github.
 
-
+![](/dt4/cd4.png)
 
 
 **Step - 4** Now, we need to create a container that has Kubectl pre-configured, so that we can use it as a dynamic slave to deploy the server image using Kubernetes.
@@ -129,12 +133,21 @@ Now, after making changes in this file, reload your daemon services & restart yo
     
     
 **Step - 6** Now, you need to configure the docker cloud in your jenkins. For this, you'll need to download a plugin known as _**docker**._
+
+![](dt4/pi.png)
+
 After downloading this plugin, go to _**Manage Jenkins**_. From there, go to _**Manage Nodes and Clouds**_.
 Select the _**Configure Clouds**_ option from the left.
 
 Configure that file as follows :
 
+![](/dt4/cc1.png)
 
+![](/dt4/cc2.png)
+
+![](/dt4/cc3.png)
+
+![](/dt4/cc4.png)
 
 
 
