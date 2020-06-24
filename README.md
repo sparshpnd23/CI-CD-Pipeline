@@ -139,7 +139,7 @@ Now, after making changes in this file, reload your daemon services & restart yo
 After downloading this plugin, go to _**Manage Jenkins**_. From there, go to _**Manage Nodes and Clouds**_.
 Select the _**Configure Clouds**_ option from the left.
 
-Configure that file as follows :
+Configure the cloud as follows :
 
 ![](/dt4/cc1.png)
 
@@ -153,6 +153,14 @@ Configure that file as follows :
 
 
 
-**Step - 7** 
+**Step - 7** Now, a Jenkins task will work to create the Deployment with the image. This task will also do Rollout in case of any updates.
 
+![](/dt4/kb1.png)
 
+![](/dt4/cc5.png)
+
+Now, we go into cmd & check whether the Deployment is done or not.
+
+![](/dt4/final.png)
+
+Viola !! The Deployment has been done with all 5 replicas. Now, sit back & relax. The Rollout will auto update the Deployment in case of any update in the code.
