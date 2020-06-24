@@ -1,4 +1,4 @@
-# CI/CD Pipeline
+# CI/CD Pipeline with Dynamic Distributed Jenkins Cluster
 
 The motive of this project is to implement CI/CD (Continuos Integration & Continuous Deployment) by integrating Redhat Linux, Kubernetes & Dynamic Master-Slave Architecture of Jenkins.
 First of all, a dockerfile will be pushed to Github along with the code that needs to be deployed. That code will be auto downloaded & the web pages that need to be deployed will be added to that Dockerfile. The Dockerfile will then be built and the image will be auto pushed to Github repo.
